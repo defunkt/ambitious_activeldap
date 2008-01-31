@@ -1,0 +1,44 @@
+h2. An Ambitious ActiveLdap Adapter
+
+Write LDAP search filters in Ruby.  Awesomeness courtesy of Chris Wanstrath's Ambition library.
+
+h2. Get It 
+
+@$ sudo gem install ambitious-activeldap@
+
+
+<pre>
+require 'rubygems'
+require 'ambition/adapters/active_ldap'
+</pre>
+
+h2. Examples
+
+<ruby>
+User.select { |u| u.givenName == 'Severian' }.each do |user|
+  puts user.name
+end
+</ruby>
+
+Queries don't run until you kick them. This adapter supports only the basic kicker methods: @each@, @each_with_index@, @map@, @entries@, @to_a@. 
+
+This adapter also doesn't support the methods that require sorting, slicing, or counting, because OpenLDAP effectively doesn't support such things.  ActiveLdap lets you request sorted and sliced result sets, but it does the work in Ruby, so you might as well do it yourself.
+
+You can call @to_s@, but not @to_hash@ on a query.  @to_s@ returns the LDAP search filter as a string.
+
+<ruby>
+>> User.select { |m| m.givenName == 'Jonas' }.to_s
+=> "(givenName=Jonas)"
+</ruby>
+
+
+
+h2. Issues.find(:all, :filter => "(type=bug)") 
+
+Found a bug?  Sweet.  Add it at "the Lighthouse":http://err.lighthouseapp.com/projects/466-plugins/tickets/new.
+
+More information on Ambition:
+
+  * "http://ambition.rubyforge.org":http://ambition.rubyforge.org
+  * "http://groups.google.com/group/ambition-rb/":http://groups.google.com/group/ambition-rb/
+

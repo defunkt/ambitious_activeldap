@@ -11,8 +11,8 @@ begin
   Echoe.new('ambitious-activeldap') do |p|
     p.dependencies  << 'ruby-activeldap >=0.8.3.1'
     p.summary        = "An ambitious adapter for ActiveLDAP"
-    p.author         = 'Chris Wanstrath'
-    p.email          = "chris@ozmm.org"
+    p.author         = 'Matthew King'
+    p.email          = "automatthew@gmail.com"
 
     p.project        = 'ambition'
     p.url            = "http://ambition.rubyforge.org/"
