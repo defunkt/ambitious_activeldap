@@ -14,6 +14,8 @@ require 'ambition/adapters/active_ldap'
 
 h2. Examples
 
+Let @User@ be a subclass of @ActiveLdap::Base@
+
 <ruby>
 User.select { |u| u.givenName == 'Severian' }.each do |user|
   puts user.name
