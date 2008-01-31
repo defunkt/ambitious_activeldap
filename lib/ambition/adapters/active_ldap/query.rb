@@ -4,7 +4,10 @@ module Ambition
       class Query
 
         def kick
-          owner.find(:all, :filter => self.to_s)
+          options = {}
+          string = to_s
+          options[:filter] = string unless string.empty?
+          owner.find(:all, options)
         end
 
         def size
