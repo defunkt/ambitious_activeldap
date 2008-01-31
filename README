@@ -2,6 +2,8 @@ h2. An Ambitious ActiveLdap Adapter
 
 Write LDAP search filters in Ruby.  Awesomeness courtesy of Chris Wanstrath's Ambition library.
 
+You must be using ActiveLdap 0.9 or greater.
+
 h2. Get It 
 
 @$ sudo gem install ambitious-activeldap@

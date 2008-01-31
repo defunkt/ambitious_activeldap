@@ -9,7 +9,7 @@ begin
   require 'echoe'
 
   Echoe.new('ambitious-activeldap') do |p|
-    p.dependencies  << 'ruby-activeldap >=0.8.3.1'
+    p.dependencies  << 'activeldap >=0.9'
     p.summary        = "An ambitious adapter for ActiveLDAP"
     p.author         = 'Matthew King'
     p.email          = "automatthew@gmail.com"
